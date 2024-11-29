@@ -1,3 +1,10 @@
 body {
     font-family: monospace;
+    background-color: rgb(38, 38, 38);
+    color: wheat;
+    font-size: 15px;
+}
+
+a {
+    color: lightblue;
 }
