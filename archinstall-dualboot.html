@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArkboiTech</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 style="display: flex;"><a class="header" href="index.html">ArkboiTech - All about Linux tech</a></h1> 
+    <img src="logo.png" alt="Logo" width="48px" height="48px" style="display: flex;">
+    <hr>
+    <h2>Dualboot Arch Linux Install (with archinstall)</h2>
+    <h2>THIS TUTORIAL IS NOT COMPLETE, PLEASE DO NOT FOLLOW THE TUTORIAL UNTIL IT IS COMPLETELY FINISHED, PLEASE CHECK FOR UPDATES LATER.</h2>
+    <hr>
+    <br>
+    <pre>
+        # What we'll be doing
+
+        We will install Arch Linux, with the "Archinstall Script" that makes the
+        installation very simple, and automated, and we'll also cover how to dualboot arch linux and
+        windows on one single drive.
+
+        # Preparations
+
+        First, let's prepare the Arch Linux install medium USB Device. for this, you'll
+        need to take your USB stick and plug it into your computer, and then go to <a href="https://archlinux.org">Archlinux.org</a>
+        and go the download section. Scroll down until you see mirrors and download from a mirror
+        that's from your country/closest to you. (You'll need an active internet connection for this
+        because the filesize as of the time of writing is 1.1GB)
+
+        Once downloaded, go to <a href="https://rufus.ie">Rufus.ie</a>, and download the latest
+        version of rufus, you can search <a href="https://youtube.com">Youtube</a> for tutorials on
+        how to install a program.
+
+        Open Rufus once installed and say yes to the User Account Control prompt is asked.
+
+        Your USB Drive should automatically be detected. Click the select button below and select your
+        downloaded .iso file. then click the start button, and once done, click the close button.
+
+        Now, let's resize our drive so that we can dualboot. Go to your search menu and search for
+        "diskman" or "diskmgmt" (both are the same thing). An app called "disk management" should be the
+        first result. Open it.
+
+        In disk management, you should see Disk 0 and Disk 1 (Disk 0 is your main drive and Disk 1 is your
+        USB Drive)
+
+        In Disk 0, you should see 3 partitions (As 3 sections), an EFI Partition first, a Windows/Local Disk partition
+        and a Recovery partition
+
+        We need to shrink the system partition (It should be called windows or local disk) which is inbetween
+        the EFI and recovery partition.
+
+        Right click it and select "Shrink Volume".
+
+        A window should pop up. Click next to proceed, and you will need to enter the amount of shrink space in MiB
+        this shrink space is the space we will give to Arch Linux.
+
+        Here are some presets for the shrink space:
+
+        100GiB = 102400 MiB
+        200GiB = 204800 MiB
+        300GiB = 307200 MiB
+        400GiB = 409600 MiB
+
+        Then click next, and your disks are configured. The black section in Disk 0 is
+        unallocated space that we will use for our Arch System.
+
+        # installation
+
+        Now go to your search engine of choice, we'll do <a href="https://google.com">Google</a> for now,
+        and search for your BIOS key.
+
+        The BIOS key has to be pressed to enter BIOS when booting up.
+
+        To find your BIOS key, search:
+
+        <div class="command"><code>{Your Motherboard Company} BIOS Setup key</code></div>
+
+        Now, restart your system, and when the screen turns on, press your BIOS key.
+        Sometimes you may need to press it repeatedly
+
+        You should enter your BIOS, or for HP Users who pressed esc, press F10 to enter
+        BIOS.
+
+        In the BIOS, there should be instructions for navigating it, but try to find the
+        following:
+
+            "Boot" tab, or "Boot Device" or "Boot Order"
+
+        For HP Users, go to the Boot tab and in Boot order make sure USB/Flash drive is at the top
+        , use f6 and f5 keys to change it.
+
+        For other users, set the boot device to your USB drive.
+
+        Now, save & exit your BIOS
+
+        When booting, you should see a screen with a few options, with on of the being:
+
+            Arch linux install medium
+
+        Select that option (Which should be the one automatically selected)
+
+        Once booting into Arch, you will see a Konsole (terminal) interface after
+        it has loaded up.
+
+        You can type commands in the Konsole.
+
+        Inorder to make the konsole text huge, type this command:
+
+        <div class="command"><code>setfont ter-132n</code></div>
+
+        now, let's connect to the internet, which we can do with these commands:
+
+        <div class="command"><code>iwctl</code></div>
+
+        IWCTL allows us to connect to our networks, once you type iwctl, type these commands:
+
+        <div class="command"><code>station wlan0 get-networks</code></div>
+
+        This will show all available Wi-Fi networks.
+
+        <div class="command"><code>station wlan0 connect "{Wi-Fi name}"</code></div>
+
+        please replace {Wi-Fi name} with the name of your wi-fi and enter your password
+
+        To test connectivity, type this command:
+
+        <div class="command"><code>ping google.com</code></div>
+
+        you should get repeating replies from google.com, press Ctrl + C to exit this loop.
+
+        now, let's format our disks.
+
+        press Ctrl + L to clear the terminal and type this command below, which will
+        list all of our disks.
+
+        <div class="command"><code>lsblk</code></div>
+        
+        you should get a list of disks. now do the following commands:
+
+        <div class="command"><code>fdisk -l</code></div>
+        <div class="command"><code>cfdisk nvme0n1</code></div>
+
+        The "nvme0n1" may be "nvme0n1p1", this can be viewed in lsblk.
+        now, you should get a list of partitions in your Disk
+
+        you will see "Free Space" as well, the free space with the size of the
+        size we shrinked our windows drive is the free space we will format.
+
+        Navigate to the free space using arrow keys.
+
+        Make sure to select it with Space
+
+        Make sure the "new" action is selected from the different buttons at the bottom
+        (use left and right arrows)
+
+        press enter, and you need to enter in the space for the new partition, we need two partitions
+        to install arch, an EFI partition and a Linux Filesystem partition.
+
+        when asked the size for the new partition, remove anything already there, and instead type
+        1G, this is 1 Gigabyte for the EFI System
+
+        Once created, make sure the new partition is selected, and select the Type action from the buttons
+        below. Enter to select the type of the partition
+
+        Use arrow keys to navigate and once "EFI System" is highlighted, press enter
+        to choose it.
+
+        Now select the free space and select new again, this time, the maximum size for it should automatically be
+        typed, don't delete that, just press enter, it is the size of our Filesystem
+
+        it should be "Linux Filesystem" by default, if not change the type to Linux Filesystem
+
+        Once everything is done, select the write button at the bottom.
+
+        please remember the partition name of our newly created partitions.
+
+        Press to enter to confirm and write the partitions
+
+        then choose Exit.
+
+        now let's format our partitions.
+
+        type lsblk, and your partitions will appear.
+
+        Our linux partitions usually will be the last two ones, that is usually
+        nvme0n1p5 (efi) and nvme0n1p6 (filesystem)
+
+        type this command to format the EFI partition:
+
+        <div class="command"><code>mkfs.fat -F32 nvme0n1p5</code></div>
+
+        And then the Filesystem:
+
+        <div class="command"><code>mkfs.ext4 nvme0n1p6</code></div>
+
+        now let's mount the drives, starting with the filesystem:
+
+        <div class="command"><code>mount nvme0n1p6 /mnt</code></div>
+
+        now create a directory for the EFI system:
+
+        <div class="command"><code>mkdir /mnt/boot</code></div>
+
+        Mount the EFI system:
+
+        <div class="command"><code>mount nvme0n1p5 /mnt/boot</code></div>
+        
+        This Document is still being worked on.. Please wait for updates..
+
+
+
+     </pre>

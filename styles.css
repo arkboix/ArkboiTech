@@ -3,8 +3,93 @@ body {
     background-color: rgb(38, 38, 38);
     color: wheat;
     font-size: 15px;
+    text-shadow: 0px 1px 3px black;
 }
 
 a {
     color: lightblue;
+}
+
+.amain {
+    color: wheat;
+    text-decoration: none;
+    text-shadow: 1px 0px 2px black;
+    transition: 750ms;
+
+}
+
+.buttonmain {
+    background-color: rgb(79, 71, 57);
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px black;
+    display:grid;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    transition: 750ms;
+
+}
+
+.header {
+    font-family: monospace;
+    background-color: rgb(38, 38, 38);
+    color: wheat;
+    text-shadow: 0px 1px 3px black;
+    text-decoration: none;
+    text-align: center;
+}
+
+.command {
+    background-color: rgb(39, 35, 28);
+    border-radius: 5px;
+    padding: 6px;
+    margin-right: 110px;
+    margin-left: 60px;
+    font-size: 13px;
+    box-shadow: 1px 1px 3px black;
+    transition: 750ms;
+}
+
+.command:hover {
+    background-color: wheat;
+    color: rgb(39, 35, 28);
+    transition: 750ms;
+    cursor: default;
+    font-size: 15px;
+    margin-right: 70px;
+
+
+}
+
+.amain:hover {
+    color: rgb(255, 248, 234);
+    text-decoration: none;
+    text-shadow: 1px 0px 2px black;
+    transition: 750ms;
+    font-size: 20px;
+}
+
+.buttonmain:hover {
+    background-color: rgb(117, 107, 90);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px black;
+    display:grid;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    transition: 750ms;
+
+
+}
+
+#lowresfedora1:hover {
+    width: 280px;
+    height: 140px;
+    transition: 750ms;
+}
+
+#lowresfedora1 {
+    transition: 750ms;
 }
