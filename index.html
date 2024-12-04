@@ -10,33 +10,38 @@
     <h1 style="display: flex;"><a class="header" href="index.html">ArkboiTech - All about Linux tech</a></h1> 
     <img src="logo.png" alt="Logo" width="48px" height="48px" style="display: flex;">
     <hr>
+    
+    
+    
     <h2>Groups</h2>
     <hr>
-    <br>
-    <button class="buttonmain"><a class="amain" href="linuxgroup.html">Linux Articles (3 items)</a></button>
-    <button class="buttonmain"><a class="amain" href="linuxtutorialsgroup.html">Linux Tutorials (1 items)</a></button>
-    <br>
-    <hr>
-    <h2>Empty Groups</h2>
+    <!-- Search Bar -->
+    <div>
+        <input type="text" id="searchInput" placeholder="Search groups.." onkeyup="filterContent()">
+    </div>
     <hr>
     <br>
-    <button class="buttonmain"><a class="amain" href="coming-soon.html">Windows Tutorials (0 items)</a></button>
-    <button class="buttonmain"><a class="amain" href="coming-soon.html">Windows Articles (0 items)</a></button>
-    <button class="buttonmain"><a class="amain" href="coming-soon.html">Programming (0 items)</a></button>
-
-   
-
-    <h2>More Updates coming sooon!</h2>
+    <div id="content">
+        <button class="buttonmain" data-name="Linux Articles"><a class="amain" href="linuxgroup.html">Linux Articles (3 items)</a></button>
+        <button class="buttonmain" data-name="Linux Tutorials"><a class="amain" href="linuxtutorialsgroup.html">Linux Tutorials (1 items)</a></button>
+        <br>
+        <hr>
+        <h2>Empty Groups</h2>
+        <hr>
+        <br>
+        <button class="buttonmain" data-name="Windows Tutorials"><a class="amain" href="coming-soon.html">Windows Tutorials (0 items)</a></button>
+        <button class="buttonmain" data-name="Windows Articles"><a class="amain" href="coming-soon.html">Windows Articles (0 items)</a></button>
+        <button class="buttonmain" data-name="Programming"><a class="amain" href="coming-soon.html">Programming (0 items)</a></button>
+    </div>
+    <hr>
+    <h2>More Updates coming soon!</h2>
     <h3>Coming Up: The Fedora (KDE Plasma*) experience</h3>
-    <pre>*A desktop environment made by KDE, known for it's customizability</pre>
+    <pre>*A desktop environment made by KDE, known for its customizability</pre>
 
     <h2>Smaller Updates</h2>
     <h3>
-        Smaller updates come every week or so, but has less content than major
-        updates.
+        Smaller updates come every week or so, but has less content than major updates.
     </h3>
-
-    
-    <hr>
 </body>
+<script src="script.js"></script>
 </html>

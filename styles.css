@@ -93,3 +93,39 @@ a {
 #lowresfedora1 {
     transition: 750ms;
 }
+
+#searchInput {
+    background-color: rgb(79, 71, 57); /* Matches .buttonmain background */
+    border: none; /* Removes default border */
+    color: wheat; /* Matches text color */
+    padding: 8px; /* Matches .buttonmain padding */
+    border-radius: 6px; /* Matches .buttonmain border-radius */
+    box-shadow: 2px 2px 4px black; /* Matches .buttonmain shadow */
+    font-family: monospace; /* Matches the font used elsewhere */
+    font-size: 15px; /* Matches body font size */
+    width: calc(100% - 20px); /* Ensures it fits within its container */
+    margin: 10px 0; /* Consistent margin */
+    text-shadow: 0px 1px 3px black; /* Matches body text shadow */
+    transition: 750ms; /* Smooth transition effects */
+}
+
+#searchInput::placeholder {
+    color: wheat; /* Matches link colors for placeholder text */
+    text-shadow: 0px 1px 2px black; /* Adds a shadow for placeholder */
+    font-style: italic; /* Subtle differentiation */
+}
+
+#searchInput:focus {
+    outline: none; /* Removes default focus outline */
+    background-color: rgb(117, 107, 90); /* Matches .buttonmain:hover background */
+    color: rgb(38, 38, 38); /* Contrasting color for focus */
+    box-shadow: 2px 2px 6px black; /* Enhanced shadow on focus */
+}
+
+.buttonmain {
+    margin: 10px 0;
+}
+
+.hidden {
+    display: none;
+}
