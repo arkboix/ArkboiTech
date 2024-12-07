@@ -206,6 +206,44 @@
         Mount the EFI system:
 
         <div class="command"><code>mount nvme0n1p5 /mnt/boot</code></div>
+
+        Alright, now we have set up our partitions. You can type lsblk to ensure the parititons are mounted.
+        The filesystem partition should have /mnt and the efi partition /mnt/boot next to it
+
+        # Install Archinstall
+
+        In order to use the archinstall script, we need to install archinstall and the archlinux-keyring. for that,
+        type this command:
+
+        <div class="command"><code>pacman -Sy</code></div>
+        <div class="command"><code>pacman -Sy archlinux-keyring archinstall</code></div>
+
+        You may be prompted to proceed with the installation, type "y" to continue.
+        Once it is installed, launch archinstall with:
+        
+        <div class="command"><code>archinstall</code></div>
+
+        you will get an interface that can be navigated with the arrow keys , the enter key, and the spacebar.
+
+        This is all you need to change in there:
+
+        Mirrors Category: press enter to open it and select your region's mirros, it's usually easy, just find your country.
+
+        Partition/Disk Configuration category: open it and select "Pre mounted drives" and when prompted for the directory of the root partition, type
+        "/mnt". If asked for the EFI partition, type "/mnt/boot"
+
+        Users category: create a user, name it whatever you want, add a password, and when asked to be a super user, choose YES.
+
+        Root Password: set a root (sudo) password, that you will use to do commands as root.
+
+        Audio: choose pulseaudio
+
+        Extra packages: choose essentials such as browsers, text editors, here's a template:
+        
+        <div class="command"><code>firefox nano vim gimp gwenview kdenlive</code></div>
+
+        
+
         
         This Document is still being worked on.. Please wait for updates..
 

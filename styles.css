@@ -95,31 +95,31 @@ a {
 }
 
 #searchInput {
-    background-color: rgb(79, 71, 57); /* Matches .buttonmain background */
-    border: none; /* Removes default border */
-    color: wheat; /* Matches text color */
-    padding: 8px; /* Matches .buttonmain padding */
-    border-radius: 6px; /* Matches .buttonmain border-radius */
-    box-shadow: 2px 2px 4px black; /* Matches .buttonmain shadow */
-    font-family: monospace; /* Matches the font used elsewhere */
-    font-size: 15px; /* Matches body font size */
-    width: calc(100% - 20px); /* Ensures it fits within its container */
-    margin: 10px 0; /* Consistent margin */
-    text-shadow: 0px 1px 3px black; /* Matches body text shadow */
-    transition: 750ms; /* Smooth transition effects */
+    background-color: rgb(79, 71, 57); 
+    border: none; 
+    color: wheat; 
+    padding: 8px; 
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px black; 
+    font-family: monospace; 
+    font-size: 15px;
+    width: calc(100% - 20px); 
+    margin: 10px 0; 
+    text-shadow: 0px 1px 3px black; 
+    transition: 750ms; 
 }
 
 #searchInput::placeholder {
-    color: wheat; /* Matches link colors for placeholder text */
-    text-shadow: 0px 1px 2px black; /* Adds a shadow for placeholder */
-    font-style: italic; /* Subtle differentiation */
+    color: wheat; 
+    text-shadow: 0px 1px 2px black; 
+    font-style: italic; 
 }
 
 #searchInput:focus {
-    outline: none; /* Removes default focus outline */
-    background-color: rgb(117, 107, 90); /* Matches .buttonmain:hover background */
-    color: rgb(38, 38, 38); /* Contrasting color for focus */
-    box-shadow: 2px 2px 6px black; /* Enhanced shadow on focus */
+    outline: none; 
+    background-color: rgb(117, 107, 90); 
+    color: rgb(247, 233, 206); 
+    box-shadow: 2px 2px 6px black; 
 }
 
 .buttonmain {
@@ -128,4 +128,28 @@ a {
 
 .hidden {
     display: none;
+}
+
+.bgmain {
+    background-color: rgb(66, 60, 49);
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 6px;
+    border-radius: 12px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    display:block;
+}
+
+pre {
+    display:block
+}
+
+#contact {
+    display:inline;
+    margin: 2px;
+}
+
+#contactlinks {
+    margin: 6px;
 }
