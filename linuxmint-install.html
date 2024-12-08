@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArkboiTech</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 style="display: flex;"><a class="header" href="index.html">ArkboiTech - All about Linux tech</a></h1> 
+    <img src="logo.png" alt="Logo" width="48px" height="48px" style="display: flex;">
+    <hr>
+    <h3><i>Date: 7/12/2024</i>| How to install and set up Linux Mint 22</h3>
+
+
+        <pre>
+            <b># What we'll be doing</b>
+
+            Today we are going to be installing and setting up Linux Mint 22 "Wilma", which as of late 2024 is the
+            latest version of Linux Mint.
+
+            Linux Mint is know for being user friendly and highly stable, so I recommend following this tutorial if
+            you want to get started with Linux.
+
+            <b># What we need</b>
+
+            There are some stuff that we need in order to install Linux Mint.
+
+            > An active internet connection
+            > A USB Drive, with atleast 30GB Space
+            > A hard drive with atleast 50GB Space (I Recommend a 64GB+ Drive as the minimum)
+            
+            <b># Preparation</b>
+
+            Sow, now we need to prepare our Linux Mint Installation Medium.
+
+            An Installation Medium allows us to install Linux Mint to our system.
+
+            Go to <a href="https://linuxmint.com" class="amain">linuxmint.com</a> and click download. You will
+            get to choose what edition/flavour of Mint you want, select Cinnamon, since it's the most modern flavour.
+            You will be asked to choose from the download mirrors after you select your flavour/edition, choose the country that
+            you live in, or if not available, choose the country closest to you, otherwise select a link from the world mirrors.
+            Then it will download the .iso file for Linux Mint.
+
+            Now, we need to download a tool to burn our downloaded .iso file to our USB Drive.
+            and that tool, is Rufus, which you can download from <a href="https://rufus.ie" class="amain">rufus.ie</a>
+
+            You can choose the latest version to downlaod and once downloaded, open the .exe file.
+
+            In Rufus, if your USB Drive is plugged into your computer, it will automatically detect it, if not, please ensure
+            that the Drive is connected properly.
+
+            Under the "Device" section with your USB Drive in rufus, you should see the option to select an iso, click the
+            select button.
+
+            Now, you can select your downloaded .iso file.
+
+            <b>WARNING: Before you start to burn the .iso file, backup any data on the USB, as it will be completely formatted and erased.</b>
+
+            Now click the start button below, to start the process.
+
+            Once finished, DO NOT click the start button again, click the close button.
+            Also, if prompted to download anything when clicking the start button, say yes.
+
+            <b># Booting into the Installation Medium</b>
+
+            Now that our USB Drive is ready, let's boot into it. Make sure to backup any important data in your current system,
+            and then, search in your desired search engine (google, bing, duckduckgo), for your motherboard manufacturer's BIOS key.
+
+            To put it simply:
+
+            For laptop users search: {laptop_company_name} laptop BIOS key
+            For PC users search: {motherboard_company_name} BIOS key
+
+            The BIOS key can be: DEL, F12, ESC, F2 etc
+
+            Once you got your BIOS key, restart your computer.
+
+            When the screen turns on, press or press repeatedly , your BIOS key.
+
+            Now, setting up everything in BIOS is something I can't help in, because each BIOS is differnet,
+            but just do this:
+
+            Look for "Boot", "Boot Order", or "Boot Device"
+            If there is a category that says boot, go to the category/tab, and look for boot order, or boot device.
+            If you found boot order, in there use the keys that should be mentioned somewhere in the BIOS, to change the boot order,
+            and make sure your USB Device is at the top.
+
+            For boot device, just select your USB Drive
+
+            Now, look for secure boot, it should be in the boot tab/category if there is one.
+            Select it, and disable it.
+            If there is an option to clear all secure boot keys, do that aswell.
+
+            Now, look for save changes and exit, and select it.
+
+            Your computer will continue to boot, but this time, into your USB Drive
+
+            There should be some options, such as:
+
+            Start Linux Mint 22
+
+            Select that option.
+
+            <b># Installing Linux Mint</b>
+
+            You will boot into what's called a live environment.
+            You can either test out and play around with Linux Mint, but remember this:
+
+            This testing area is running on a USB drive, it's a live environment, if you reboot,
+            everything you did resets
+
+            So it's recommended to just open the "Install linux mint" file on the desktop.
+
+            This will launch the installer.
+
+            You need to select the language you want to use in the installer. Then click continue.
+            Now, select your keyboard layout. It is set to EN_INTERNATIONAL/US QWERTY by default.
+
+            Once it is selected, click next.
+
+            You will be asked to choose your timezone, select it and click continue.
+
+            Now, if you are asked for the partitioning, choose "Install alongside Windows Boot Manager" to dualboot.
+            Or Erase disk to erase the entire disk. Erasing the disk will delete windows.
+
+            now, if asked to install multimedia codecs, check the option, since it is very useful.
+
+            Now you will be asked for the user details. enter your name, the computer's name, your username, and
+            choose a password.
+
+            The additional options are: Require my password to sign in or log in automatically, encrypt my home folder
+
+            Select require my password over log in automatically, and if you have a laptop, check the encrypt my home
+            folder option, so if your laptop get's stolen, they won't be able to access your files.
+
+            Now, click install, and wait for about 2 minutes, it should be done in 2 minutes, but when done, click restart now.
+            If asked to "remove installation medium, and then press ENTER", disconnect the usb drive and press enter.
+
+            Congratulations! you have installed Linux Mint!
+
+            # First Boot
+
+            Now, you will boot into linux mint, and here's how to set everything up!
+
+            First of all, if you see a welcome screen, then just close that out we're gonna be doing everything 
+            manually, so first of all, we need to update our system, for that you open the terminal, and don't be scared it's just 2
+            commands, and here are the commands you need to type.
+
+            <div class="command"><code>sudo apt update</code></div>
+
+            you will be prompted to type your password, while typing, you can't see it on screen 
+
+            <div class="command"><code>sudo apt upgrade -y</code></div>
+
+            Now, wait for that to finish, and once it's finished, you're done updating.
+
+            <b># Aesthetics and more</b>
+
+            Now, we can theme out and customize our system. feel free to add apps to the panel (taskbar),
+            change the position or size of the panel, change the background in system settings, change the theme, get a
+            new theme, it's al stuff that you can easily do.
+
+            Also in themes, click advanced theme options to change icons, cursors, window borders, etc, and get new themes.
+
+            You can also install programs, either from the terminal or the software manager, here is the terminal commands to intsall a program.
+
+            <div class="command"><code>sudo apt install {program-name-(usually smallercase, and hiphens instead of spaces)}</code></div>
+
+            and then, you can also try out some of these commands that i recommend:
+
+            <div class="command"><code>sudo apt install thunar</code></div> - Installs Thunar, an easy file manager
+            <div class="command"><code>sudo apt install vim</code></div> - not for beginners, but cool text editor
+            <div class="command"><code>sudo apt install code</code></div> - install vscode
+            <div class="command"><code>sudo apt purge firefox | sudo apt install google-chrome</code></div> - remove firefox and add google chrome
+
+            And yeah, that's just only a few things out of the many things you can do, and now, you could try, installing a different desktop environment, but that's
+            for another articles, and have fun in your new system!
+
+            -arkboi
+        </pre>
+</body>
+</html>

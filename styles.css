@@ -7,7 +7,7 @@ body {
 }
 
 a {
-    color: lightblue;
+    color: wheat;
 }
 
 .amain {
@@ -132,17 +132,10 @@ a {
 
 .bgmain {
     background-color: rgb(66, 60, 49);
-    margin-left: 150px;
-    margin-right: 150px;
     padding: 6px;
     border-radius: 12px;
     margin-top: 5px;
     margin-bottom: 50px;
-    display:block;
-}
-
-pre {
-    display:block
 }
 
 #contact {
