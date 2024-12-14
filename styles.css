@@ -6,6 +6,11 @@ body {
     text-shadow: 0px 1px 3px black;
 }
 
+body::selection {
+    color: rgb(26, 34, 34);
+    background-color: white;
+}
+
 a {
     color: white;
 }
@@ -147,5 +152,12 @@ a {
 }
 
 pre {
-    font-family: Trebuchet MS;
+    font-family: Sans-Serif;
+    padding: 4px;
 }
+
+pre::selection {
+    background-color: white;
+    color: rgb(26, 34, 34);
+}
+
